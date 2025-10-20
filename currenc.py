@@ -9,7 +9,7 @@
 # 	3.	Создать словарь вида «CharCode – Nominal».
 # 	4.	Сохранить результат в файл currency_result.txt.
 #
-# import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET
 
 tree = ET.parse('currency.xml')
 root = tree.getroot()
@@ -24,5 +24,6 @@ for v in root.findall('.//Valute'):
 with open('currency_result.txt', 'w', encoding='utf-8') as f:
     for k, v in result.items():
         f.write(f'{k}: {v}\n')
+
 
 print('✅ currency_result.txt has been made')
